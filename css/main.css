@@ -66,6 +66,24 @@ a {
 	border-bottom: 2px solid #ed9c27;
 }
 
+.menu1 {
+	display: flex;
+	padding-left: 160px;
+	padding-top: 80px;
+}
+
+.menu1 a {
+	font-size: 21px;
+	color: #ffffff;
+	font-family: Calibri;
+	font-weight: 200;
+	margin-left: 47px;
+}
+
+.menu1 a:hover {
+	border-bottom: 2px solid #ed9c27;
+}
+
 .title__h1 {
 	color: #fff;
 	margin-top: 234px;
@@ -130,22 +148,22 @@ a {
 	font-family: Calibri;
 	font-weight: bold;
 	width: 250px;
-	margin-left: 31px;/*картинка*/
-	margin-top: 31px;/*Текст*/
+	margin-left: 31px;/*РєР°СЂС‚РёРЅРєР°*/
+	margin-top: 31px;/*РўРµРєСЃС‚*/
 	text-align: center;
 }
 
 .image-icon {
-	margin-top: 31px;/*картинка*/
-	margin-left: 105px;/*картинка*/
+	margin-top: 31px;/*РєР°СЂС‚РёРЅРєР°*/
+	margin-left: 105px;/*РєР°СЂС‚РёРЅРєР°*/
 	width: 102px;
 	height: 102px;
 	background: url(../img/icondownload.png) no-repeat center top;
 }
 
 .image-icon2 {
-	margin-top: 31px;/*картинка*/
-	margin-left: 105px;/*картинка*/
+	margin-top: 31px;/*РєР°СЂС‚РёРЅРєР°*/
+	margin-left: 105px;/*РєР°СЂС‚РёРЅРєР°*/
 	width: 102px;
 	height: 102px;
 	background: url(../img/iconadd.png) no-repeat center top;
