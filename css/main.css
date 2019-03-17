@@ -17,6 +17,9 @@ div, p, button, span, a {
 ul {
 	list-style-type: none;
 }
+ul1 {
+	list-style-type: none;
+}
 .header {
 	width: 1142px;
 	margin: 0 auto;
