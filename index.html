@@ -59,6 +59,7 @@ document.oncontextmenu=function(e){return false};
 		<title>Scripting | Liechtenstein</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -83,10 +84,11 @@ document.oncontextmenu=function(e){return false};
 						</div>
 						<nav>
 							<ul>
-								<li><a href="https://vk.com/scripts_by_liechtenstein">Группа VK</a></li>
+								<li><a href="#group">Группа VK</a></li>
 								<li><a href="#howtoplay">Как начать?</a></li>
 								<li><a href="#about">О проекте</a></li>
 								<li><a href="#script">Скрипты</a></li>
+								
 								<!--<li><a href="#donate">Elements</a></li>-->
 							</ul>
 						</nav>
@@ -132,6 +134,21 @@ document.oncontextmenu=function(e){return false};
 										vkeys.lua<br>
 									</font></p> </center>
 							</article>
+							
+						<!-- About -->
+						<article id="group">
+							<center>
+								<h2 class="major">О проекте</h2>
+							</center>
+							<div id="vk_community_messages"></div>
+							<script type="text/javascript">
+								var widget = VK.Widgets.CommunityMessages("vk_community_messages", 174663474);
+								widget.stopTitleAnimation();
+								widget.expand({
+									welcomeScreen: 1,
+								});
+							</script>
+						</article>
 
 						<!-- scripts -->
 						<article id="script">
