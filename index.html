@@ -1,120 +1,173 @@
-<!DOCTYPE html>
-<html lang="ru">
+﻿<!DOCTYPE HTML>
+<html>
+<script type="text/javascript">
+	function noselect() {return false;}
+	 
+	function addHandler(event, handler){
+	 if (document.attachEvent) {
+	 document.attachEvent('on' + event, handler);
+	 }
+	 else if (document.addEventListener) {
+	 document.addEventListener(event, handler, false);
+	 }
+	 }
+	 
+	function killSelection(){
+	 if (window.getSelection) {
+	 window.getSelection().removeAllRanges();
+	 }
+	 else if (document.selection && document.selection.clear) {
+	 document.selection.clear();
+	 }
+	 }
+	 
+	function noSelectionEvent(event) {
+	 var event = event || window.event;
+	 
+	 var key = event.keyCode || event.which;
+	if (event.ctrlKey && (key == 65 || key == 85)) {
+	 killSelection();
+	if (event.preventDefault) { event.preventDefault(); }
+	 else { event.returnValue = false; }
+	 return false;
+	 }
+	 }
+	 
+	addHandler('keydown', noSelectionEvent);
+	addHandler('keyup', noSelectionEvent);
+</script>
+<script language=javascript> 
+function click(e) { 
+if (document.all) {
+if (event.button == 2) { // Чтобы отключить левую кнопку поставьте цифру 1 
+alert(message); // чтобы отключить среднюю кнопку поставьте цифру 1 
+return false;} 
+} 
+if (document.layers) {
+if (e.which == 3) { 
+alert(message); 
+return false;} 
+} 
+} 
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);} 
+document.onmousedown=click; 
+document.oncontextmenu=function(e){return false}; 
+//--> 
+</script>
+	<head>
+		<title>Scripting | Liechtenstein</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body>
 
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="shortcut icon" href="img/favicon.ico" type="img/x-icon">
-	<link rel="icon" href="img/favicon.ico" type="img/x-icon">
-	<title>Scripting | Liechtenstein - Официальный сайт</title>
-</head>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-<body>
-	<div class="header">
-		<div class="header__menu">
-			<div class="logo" id="mainmenu"><a href="/">Scripting | Liechtenstein</a></div>
-			<ul class="menu">
-				<li><a href="#mainmenu">Главная</a></li>
-				<!-- <li><a target="_blank" href="https://vk.com/scripts_by_liechtenstein">Оф.группа VK</a></li> -->
-									<li><a href="#info">Информация</a></li>
-									<li><a href="#downloads">Скачать</a></li>
-									<li><a target="#trebov">Требования</a></li>
-		</div>
-		<h1 class="title__h1 animated bounceIn">Scripting | Liechtenstein</h1>
-		<p class="title__text animated bounceIn">
-			Приветствую на официальном сайте S|L. Тут ты можешь скачать всё необходимое для работы скриптов и конечно же их самих<br>
-			Приятного пользования!
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-diamond"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Scripting | Liechtenstein</Script></h1>
+								<p>Приветствую на официальном сайте S|L. Тут ты можешь скачать всё необходимое для работы скриптов и конечно же их
+								самих<br>
+								Приятной игры со скриптами от S|L!<a href="https://html5up.net/license">(SAMP).</a></p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="/forum">Группа VK</a></li>
+								<li><a href="#howtoplay">Как играть</a></li>
+								<li><a href="#about">О проекте</a></li>
+								<li><a href="#donate">Донат</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
 
-		</p>
-		 <div class="connect animated bounceIn"><a href="https://vk.com/scripts_by_liechtenstein">Группа VK</a>
-	</div>
-	</div>
-	<div class="how-to-start" id="trebov">
-		<div class="title__h2">
-			<h2>Требования</h2>
-		</div>
-		<div class="flexx animated bounceIn">
-			<div class="item-block animated bounceIn">
-				<div class="image-icon"></div>
-				<p>Скачайте клиент 
-				San Andreas Multuplayer Версии R1
-				</p>
-				<div class="btm__item"><a href="http://files.sa-mp.com/sa-mp-0.3.7-install.exe">Скачать</a> </div>
-			</div>
-			<div class="item-block">
-				<div class="image-icon"></div>
-				<p>Скачайте необходимые библиотеки</p>
-				<div class="btm__item"><a href="https://vk.cc/9aRFqe">Скачать</a></div>
-			</div>
-			<div class="item-block animated bounceIn">
-				<div class="image-icon2"></div>
-				<p>Учтите скрипты работают только на Pears Project [1] </p>
-				<div class="btm__item"><a href="samp://176.32.37.62:7777">Добавить</a></div>
-			</div>
-		</div>
-	</div>
-	<div class="how-to-start" id="downloads">
-		<div class="title__h3">
-			<h3>Скрипты</h3>
-		</div>
-		<div class="flexx animated bounceIn">
-			<div class="item-block animated bounceIn">
-				<div class="image-icon"></div>
-				<p>Скачать скрипт для Полиции</p>
-				<div class="btm__item"><a href="https://vk.cc/9aw5Ys">Скачать</a> </div>
-			</div>
-			<div class="item-block">
-				<div class="image-icon"></div>
-				<p>Скачать скрипт для NGSA</p>
-				<div class="btm__item"><a href="https://vk.cc/9aw5GX">Скачать</a></div>
-			</div>
-			<div class="item-block">
-				<div class="image-icon"></div>
-				<p>Скачать скрипт для Arabian Mafia</p>
-				<div class="btm__item"><a href="vk.cc/9aRRfh">Скачать</a></div>
-			</div>
-		</div>
-	</div>
-	<div class="how-to-start" id="info">
-		<div class="title__h3">Информация</div>
-		<div class="title__p animated bounceIn">
-			<p>
-				Представляем вашему вниманию скрипты для Полиции, Армии, ФБР, Мафий и
-				тд.
-				С их помощью вам будет проще вести жизнь отыгрываемого персонажа.
-				Так же вы можете заказать скрипт для своей фракции или же для себя.<br>
-				Скрипты пишутся только для Pears Project 1.
-			|_________________________________________________________________________________________________|</p>
-			<p><font color="#fffff0">
-			<br>
-				Внимание! Для работы скриптов необходимы:<br>
-				Cleo 4.3 И выше<br>
-				Moonloader 0.26.5<br>
-				SampFuncs 5.4.1<br>
-				AsiLoader (last)<br>
-				Так же потребуются некоторые библиотеки которые можно скачать выше или в оф. группе:<br> </font> 
-				<font color ="#ff0000">
-				MoonImgui<br>
-				samp.lua<br>
-				rkeys.lua<br>
-				ssl.html.lua<br>
-				vkeys.lua<br>
-				</font>
-			</p>
-		</div>
-	</div>
-	<!-- <div class="how-to-start" id="info">
-		<div class="title__h3">Обратная связь</div>
-		<div class="title__p animated bounceIn">
-			<p>
-			</p>
-		</div>
-	</div> -->
-	<div class="how-to-start">
-		<div class="copy__p">
-			<p>Scripting | Liechtenstein (с)| Все права защищены.</p>
-		</div>
-</body>
+				<!-- Main -->
+					<div id="main">
 
+						<!-- How To Play -->
+							<article id="howtoplay">
+								<center><h2 class="major">Как начать использовать скрипты?.</h2></center
+								<p><center><font size="4">Первый шаг</font></center></p>
+								<p>Чтобы начать игру на нашем проекте Runlax Role Play, вам потребуется игра GTA San-Andreas. Скачать GTA SA</p>
+								<p><center><font size ="4">Второй шаг</font></center></p>
+								<p>После установки GTA SA потребуется лаунчер для игры по сети под названием SAMP. Скачать SAMP</p>
+							</article>
+
+						<!-- About -->
+							<article id="about">
+								<center><h2 class="major">О проекте</h2></center>
+								<p>Представляем вашему вниманию скрипты для Полиции, Армии, ФБР, Мафий и
+								тд.
+								С их помощью вам будет проще вести жизнь отыгрываемого персонажа.
+								Так же вы можете заказать скрипт для своей фракции или же для себя.<br>
+								Скрипты пишутся только для Pears Project 1.
+								|_______________________________________________________________________|</p>
+								<p>
+										<br>
+										Внимание! Для работы скриптов необходимы:<br>
+										<font color="#00ffff">
+										Cleo 4.3 И выше<br>
+										Moonloader 0.26.5<br>
+										SampFuncs 5.4.1<br>
+										AsiLoader (last)<br> </font>
+										Так же потребуются некоторые библиотеки которые можно скачать выше или в оф. группе:<br>
+									<font color="#ff0000">
+										MoonImgui<br>
+										samp.lua<br>
+										rkeys.lua
+										ssl.html.lua<br>
+										vkeys.lua<br>
+									</font></p>
+							</article>
+
+						<!-- Donate -->
+							<article id="donate">
+								<center><h2 class="major">Донат</h2></center>
+                                <div class="toggle-content text-center" id="tab2">
+                                    <center><form action="https://unitpay.ru/pay/23554-6e584">
+									<div>
+									<input id='nickname' type="text" name="account" maxlength='48' placeholder='Твой ник (Имя)'>
+									</div>
+									<br>
+									<div>
+									<input id='money' type="text" name="sum" maxlength='12' placeholder='Сумма пополнения'>
+									</div>
+									<div>
+									<br>
+									<input class="orange_button" type="submit" value="Донатнуть">
+									</div>
+									</form></center>
+									</strong> 
+                                </div>
+							</article>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Scripting | Liechtenstein <a href="https://vk.com/scripts_by_liechtenstein">S|L Official</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
