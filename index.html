@@ -66,6 +66,7 @@
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+			<script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
 </head>
 
 <body>
@@ -108,7 +109,6 @@
 			welcomeScreen: 1,
 		});
 	</script>
-
 	<!-- Main -->
 	<div id="main">
 
@@ -170,6 +170,16 @@
 			vkeys.lua<br>
 		</font>
 	</p>
+	<!-- Put this script tag to the <head> of your page -->
+	<script type="text/javascript">
+		VK.init({ apiId: API_ID, onlyWidgets: true });
+	</script>
+	
+	<!-- Put this div tag to the place, where the Comments block will be -->
+	<div id="vk_comments"></div>
+	<script type="text/javascript">
+		VK.Widgets.Comments("vk_comments", { limit: 10, attach: "*" });
+	</script>
 	</center>
 </article>
 
@@ -178,12 +188,10 @@
 	<center>
 		<h2 class="major">Благодарность</h2></center>
 	<p><center>
-	Norton (Katsuro) - Помог и подсказал некоторые функции<br>
+	<font color="FF0000">Norton (Katsuro)</font> - Помог и подсказал некоторые функции<br>
 	Benjamin Hoffman - Помог в поиске ошибок в Police Assistant<br>
 	Renard Montero - Помог в поиске ошибок в Police Assistant<br>
-	Hasvord Rashford - Подкинул идейку с (/b !)<br>
-	Madara Resendez - Помощь с созданием Army Assist<br>
-	Mak Recense - Помощь с созданием A.M.A (AM Assist)
+	Hasvord Rashford - Подкинул идейку с (/b !)
 	</center>
 	</p>
 	
