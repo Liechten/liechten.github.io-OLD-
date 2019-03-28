@@ -1,73 +1,73 @@
 <!DOCTYPE HTML>
 <html>
 <script type="text/javascript">
-	function noselect() { return false; }
-
-	function addHandler(event, handler) {
-		if (document.attachEvent) {
-			document.attachEvent('on' + event, handler);
-		}
-		else if (document.addEventListener) {
-			document.addEventListener(event, handler, false);
-		}
-	}
-
-	function killSelection() {
-		if (window.getSelection) {
-			window.getSelection().removeAllRanges();
-		}
-		else if (document.selection && document.selection.clear) {
-			document.selection.clear();
-		}
-	}
-
+	function noselect() {return false;}
+	 
+	function addHandler(event, handler){
+	 if (document.attachEvent) {
+	 document.attachEvent('on' + event, handler);
+	 }
+	 else if (document.addEventListener) {
+	 document.addEventListener(event, handler, false);
+	 }
+	 }
+	 
+	function killSelection(){
+	 if (window.getSelection) {
+	 window.getSelection().removeAllRanges();
+	 }
+	 else if (document.selection && document.selection.clear) {
+	 document.selection.clear();
+	 }
+	 }
+	 
 	function noSelectionEvent(event) {
-		var event = event || window.event;
-
-		var key = event.keyCode || event.which;
-		if (event.ctrlKey && (key == 65 || key == 85)) {
-			killSelection();
-			if (event.preventDefault) { event.preventDefault(); }
-			else { event.returnValue = false; }
-			return false;
-		}
-	}
-
+	 var event = event || window.event;
+	 
+	 var key = event.keyCode || event.which;
+	if (event.ctrlKey && (key == 65 || key == 85)) {
+	 killSelection();
+	if (event.preventDefault) { event.preventDefault(); }
+	 else { event.returnValue = false; }
+	 return false;
+	 }
+	 }
+	 
 	addHandler('keydown', noSelectionEvent);
 	addHandler('keyup', noSelectionEvent);
 </script>
-<script language=javascript>
-	function click(e) {
-		if (document.all) {
-			if (event.button == 2) { // Чтобы отключить левую кнопку поставьте цифру 1 
-				alert(message); // чтобы отключить среднюю кнопку поставьте цифру 1 
-				return false;
-			}
-		}
-		if (document.layers) {
-			if (e.which == 3) {
-				alert(message);
-				return false;
-			}
-		}
-	}
-	if (document.layers) { document.captureEvents(Event.MOUSEDOWN); }
-	document.onmousedown = click;
-	document.oncontextmenu = function (e) { return false };
-//-->
+<script language="javascript"> 
+<!--   
+function click(e) { 
+if (document.all) {
+if (event.button == 2) {
+alert(message);
+return false;} 
+} 
+if (document.layers) {
+if (e.which == 3) { 
+alert(message); 
+return false;} 
+} 
+} 
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);} 
+document.onmousedown=click; 
+document.oncontextmenu=function(e){return false}; 
+//--> 
 </script>
+	<head>
+		<title>Scripting | Liechtenstein</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link href="assets/css/main.css" rel="stylesheet">
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link href="assets/css/noscript.css" rel="stylesheet"></noscript>
+		<script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
+		<script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
+	</head>
+	<body></body></html>
 
-<head>
-	<title>Scripting | Liechtenstein</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
-</head>
 
 <body>
 
@@ -116,26 +116,27 @@
 		<article id="howtoplay">
 			<center>
 				<h2 class="major">Как начать использовать скрипты?.</h2>
-			</center> <p>
+			</center> 
+			<p>
 			<center>
 				<font size="4">Первый шаг</font>
 			</center>
-</p>
-<p>Чтоб начать использовать скрипты вам необходимо:</p> <a href="http://files.sa-mp.com/sa-mp-0.3.7-install.exe">SAMP
-	0.3.7R1.</a></p>
+			</p>
+<p>Чтоб начать использовать скрипты вам необходимо: <a href="http://files.sa-mp.com/sa-mp-0.3.7-install.exe">SAMP
+	0.3.7 R1.</a></p>
 <p>
 	<center>
 		<font size="4">Второй шаг</font>
 	</center>
 </p>
-<p>Теперь необходимо скачать всё остальное:</p> <a href="cleo.li">CLEO </a></p><a
-	href="https://blast.hk/threads/17/">Sampfuncs </a></p><a href="https://blast.hk/threads/13305/">Moonloader</a></p>
+<p>Теперь необходимо скачать всё остальное: <a href="cleo.li">CLEO </a></p><a
+	href="https://blast.hk/threads/17/">Sampfuncs </a><a href="https://blast.hk/threads/13305/">Moonloader</a></p>
 <p>
 	<center>
 		<font size="4">Третий шаг</font>
 	</center>
 </p>
-<p>Теперь необходимо скачать библиотеки для работы скриптов:</p> <a href="https://vk.cc/9aRFqe">LIBS </a></p>
+<p>Теперь необходимо скачать библиотеки для работы скриптов: <a href="https://vk.cc/9aRFqe">LIBS </a></p>
 </p>
 </article>
 
