@@ -208,11 +208,10 @@
 
 		p.ctext {
 			color: #ffffff;
-			font-weight: 600;
-			line-height: 1.5;
-			margin: 0 0 1rem 0;
-			text-transform: uppercase;
-			letter-spacing: 0.2rem;
+			font-weight: normal;
+			margin: 0 0 2rem 0;
+			text-transform: capitalize;
+			letter-spacing: normal;
 			text-align: center;
 			/* margin: 0 0 2rem 0; */
 			font-size: 12px;
@@ -222,11 +221,9 @@
 
 		p.ltext {
 			color: #ffffff;
-			font-weight: 600;
-			line-height: 1.5;
-			margin: 0 0 1rem 0;
-			text-transform: uppercase;
-			letter-spacing: 0.2rem;
+			font-weight: normal;
+			text-transform: capitalize;
+			letter-spacing: normal;
 			text-align: left;
 			margin: 0 0 2rem 0;
 			font-size: 12px;
