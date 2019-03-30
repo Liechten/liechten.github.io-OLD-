@@ -4,159 +4,174 @@
 	vk.com/alexanderliecht
 -->
 <html lang="ru">
-	<head>
-		<title>Scripting | Liechtenstein</title>
-		<meta charset="utf-8" />
-		<script type="text/javascript">
-			function noselect() { return false; }
 
-			function addHandler(event, handler) {
-				if (document.attachEvent) {
-					document.attachEvent('on' + event, handler);
-				}
-				else if (document.addEventListener) {
-					document.addEventListener(event, handler, false);
-				}
+<head>
+	<title>Scripting | Liechtenstein</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript">
+		function noselect() { return false; }
+
+		function addHandler(event, handler) {
+			if (document.attachEvent) {
+				document.attachEvent('on' + event, handler);
 			}
-
-			function killSelection() {
-				if (window.getSelection) {
-					window.getSelection().removeAllRanges();
-				}
-				else if (document.selection && document.selection.clear) {
-					document.selection.clear();
-				}
+			else if (document.addEventListener) {
+				document.addEventListener(event, handler, false);
 			}
+		}
 
-			function noSelectionEvent(event) {
-				var event = event || window.event;
+		function killSelection() {
+			if (window.getSelection) {
+				window.getSelection().removeAllRanges();
+			}
+			else if (document.selection && document.selection.clear) {
+				document.selection.clear();
+			}
+		}
 
-				var key = event.keyCode || event.which;
-				if (event.ctrlKey && (key == 65 || key == 85)) {
-					killSelection();
-					if (event.preventDefault) { event.preventDefault(); }
-					else { event.returnValue = false; }
+		function noSelectionEvent(event) {
+			var event = event || window.event;
+
+			var key = event.keyCode || event.which;
+			if (event.ctrlKey && (key == 65 || key == 85)) {
+				killSelection();
+				if (event.preventDefault) { event.preventDefault(); }
+				else { event.returnValue = false; }
+				return false;
+			}
+		}
+
+		addHandler('keydown', noSelectionEvent);
+		addHandler('keyup', noSelectionEvent);
+	</script>
+	<script language=javascript>
+
+		function click(e) {
+			if (document.all) {
+				if (event.button == 2) {
+					alert(message);
 					return false;
 				}
 			}
-
-			addHandler('keydown', noSelectionEvent);
-			addHandler('keyup', noSelectionEvent);
-		</script>
-		<script language=javascript>
-
-			function click(e) {
-				if (document.all) {
-					if (event.button == 2) {
-						alert(message);
-						return false;
-					}
-				}
-				if (document.layers) {
-					if (e.which == 3) {
-						alert(message);
-						return false;
-					}
+			if (document.layers) {
+				if (e.which == 3) {
+					alert(message);
+					return false;
 				}
 			}
-			if (document.layers) { document.captureEvents(Event.MOUSEDOWN); }
-			document.onmousedown = click;
-			document.oncontextmenu = function (e) { return false };
+		}
+		if (document.layers) { document.captureEvents(Event.MOUSEDOWN); }
+		document.onmousedown = click;
+		document.oncontextmenu = function (e) { return false };
 		//-->
+	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="logo">
+				<span class="icon fa-diamond"></span>
+			</div>
+			<div class="content">
+				<div class="inner">
+					<h1>Scripting | Liechtenstein</h1>
+					<p class="ltext">Приветствую на официальном сайте S|L. Приятного времяпрепровождение с нашими
+						скриптами!</p>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="https://vk.com/scripts_by_liechtenstein">Группа VK</a></li>
+					<li><a href="#information">Информация</a></li>
+					<li><a href="#scriptsdown">Скрипты</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<script type="text/javascript">
+			VK.init({ apiId: 6913993, onlyWidgets: true });
 		</script>
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
-	</head>
 
-	<body>
+		<div id="vk_community_messages"></div>
+		<script type="text/javascript">
+			var widget = VK.Widgets.CommunityMessages("vk_community_messages", 174663474);
+			widget.stopTitleAnimation();
+			widget.expand({
+				welcomeScreen: 1,
+			});
+		</script>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<!-- Main -->
+		<div id="main">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-diamond"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Scripting | Liechtenstein</h1>
-								<p class="ltext">Приветствую на официальном сайте S|L. Приятного времяпрепровождение с нашими скриптами!</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="https://vk.com/scripts_by_liechtenstein">Группа VK</a></li>
-								<li><a href="#information">Информация</a></li>
-								<li><a href="#scriptsdown">Скрипты</a></li>
-							</ul>
-						</nav>
-					</header>
+			<!-- How To Play -->
+			<article id="information">
+				<h6 class="zk">Информация</h6>
+				<p class="ctext">Привет! Доброго времени суток!<br> Тут можно узнать что требуется для работы скриптов и
+					оставить комменты!</p>
+				<h6 class="zk">Благодарности</h6>
+				<p class="ltext">Northn (Katsuro) - Помог и подсказал некоторые функции<br>
+					Benjamin Hoffman (Тестер)- Помог в поиске ошибок в "Police Assistant"<br>
+					Renard Montero - Помог в поиске ошибок в "Police Assistant"<br>
+					Hasvord Rashford - Подкинул идейку с (/b !)
+				</p>
+			</article>
 
-							<script type="text/javascript">
-								VK.init({ apiId: 6913993, onlyWidgets: true });
-							</script>
-							
-							<div id="vk_community_messages"></div>
-							<script type="text/javascript">
-								var widget = VK.Widgets.CommunityMessages("vk_community_messages", 174663474);
-								widget.stopTitleAnimation();
-								widget.expand({
-									welcomeScreen: 1,
-								});
-							</script>
+			<!-- scriptsdown -->
+			<article id="scriptsdown">
+				<h6 class="zk">Меню выбора скриптов</h6>
+				<h6 class="zk">Гос. фракции</h6>
+				<p class="ltext">Скрипт для Правоохранительных органов: <a href="https://vk.cc/9aw5Ys">Скачать</a></p>
+				<p class="ltext">Скрипт для Армии "NGSA": <a href="https://vk.cc/9aw5GX">Скачать</a></p>
+				<p class="ltext">Скрипт для Правительства: <a href="https://vk.cc/9aw5GX">СКОРО</a></p>
+				<h6 class="zk">Мафии</h6>
+				<p class="ltext">Скрипт для Арабской мафии: <a href="https://vk.cc/9aRRfh">Скачать</a></p>
+			</article>
 
-				<!-- Main -->
-					<div id="main">
-
-						<!-- How To Play -->
-							<article id="information">
-								<h6 class="zk">Информация</h6>
-								<p class="ctext">Привет! Доброго времени суток!<br> Тут можно узнать что требуется для работы скриптов и оставить комменты!</p>
-								<h6 class="zk">Благодарности</h6>
-								<p class="ltext">Northn (Katsuro) - Помог и подсказал некоторые функции<br>
-								   Benjamin Hoffman (Тестер)- Помог в поиске ошибок в "Police Assistant"<br>
-				     			   Renard Montero - Помог в поиске ошибок в "Police Assistant"<br>
-			  					   Hasvord Rashford - Подкинул идейку с (/b !)
-								</p>
-							</article>
-
-						<!-- scriptsdown -->
-							<article id="scriptsdown">
-								<h6 class="zk">Меню выбора скриптов</h6>
-								<h6 class="zk">Гос. фракции</h6>
-								<p class="ltext">Скрипт для Правоохранительных органов: <a href="https://vk.cc/9aw5Ys">Скачать</a></p>
-								<p class="ltext">Скрипт для Армии "NGSA": <a href="https://vk.cc/9aw5GX">Скачать</a></p>
-								<p class="ltext">Скрипт для Правительства: <a href="https://vk.cc/9aw5GX">СКОРО</a></p>
-								<h6 class="zk">Мафии</h6>
-								<p class="ltext">Скрипт для Арабской мафии: <a href="https://vk.cc/9aRRfh">Скачать</a></p>
-							</article>
-
-						<!-- Donate
+			<!-- Donate
 							<article id="donate">
 								<h6 class="zk">Донат</h6>
                                 
 							</article> -->
-					</div>
+		</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Scripting | Liechtenstein: <a href="https://vk.com/scripts_by_liechtenstein">S|L Official</a>.</p>
-					</footer>
+		<div id="comments">
 
-			</div>
+			<div id="vk_comments"></div>
+			<script type="text/javascript">
+				VK.Widgets.Comments("vk_comments", { limit: 10, attach: "*" });
+			</script>
+		
+		</div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">&copy; Scripting | Liechtenstein: <a href="https://vk.com/scripts_by_liechtenstein">S|L
+					Official</a>.</p>
+		</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	</div>
 
-	</body>
+	<!-- BG -->
+	<div id="bg"></div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
