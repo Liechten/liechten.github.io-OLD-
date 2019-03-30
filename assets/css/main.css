@@ -162,7 +162,7 @@
 		letter-spacing: 0.2rem;
 	}
 
-		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h6 a {
 			color: inherit;
 			text-decoration: none;
 		}
@@ -175,6 +175,64 @@
 			width: max-content;
 			padding-bottom: 0.5rem;
 			margin: 0 0 2rem 0;
+		}
+
+		h6.zk {
+			color: #ffffff;
+			font-weight: 600;
+			line-height: 1.5;
+			margin: 0 0 1rem 0;
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
+			text-align: center;
+			margin: 0 0 2rem 0;
+			font-size: 25px;
+			font-family: FontAwesome;
+			src: url(assets/fonts/Blogger_Sans-Bold_Italic.ttf);
+			text-decoration: underline;
+		}
+
+		p.zk {
+			color: #ffffff;
+			font-weight: 600;
+			line-height: 1.5;
+			margin: 0 0 1rem 0;
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
+			text-align: center;
+			margin: 0 0 2rem 0;
+			font-size: 25px;
+			font-family: Blogger_Sans-Bold_Italic;
+			src: url(assets/fonts/Blogger_Sans-Bold_Italic.ttf);
+			text-decoration: underline;
+		}
+
+		p.ctext {
+			color: #ffffff;
+			font-weight: 600;
+			line-height: 1.5;
+			margin: 0 0 1rem 0;
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
+			text-align: center;
+			/* margin: 0 0 2rem 0; */
+			font-size: 12px;
+			font-family: Philosopher_Regular;
+			src: url(assets/fonts/Philosopher_Regular.ttf);
+		}
+
+		p.ltext {
+			color: #ffffff;
+			font-weight: 600;
+			line-height: 1.5;
+			margin: 0 0 1rem 0;
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
+			text-align: left;
+			margin: 0 0 2rem 0;
+			font-size: 12px;
+			font-family: Philosopher_Regular;
+			src: url(assets/fonts/Philosopher_Regular.ttf);
 		}
 
 	h1 {
