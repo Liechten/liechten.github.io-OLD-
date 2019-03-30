@@ -1,181 +1,163 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	author by Liechtenstein
+	vk.com/alexanderliecht
+-->
 <html lang="ru">
 	<head>
-		<meta charset="utf-8">
-<script type="text/javascript">
-	function noselect() {return false;}
-	 
-	function addHandler(event, handler){
-	 if (document.attachEvent) {
-	 document.attachEvent('on' + event, handler);
-	 }
-	 else if (document.addEventListener) {
-	 document.addEventListener(event, handler, false);
-	 }
-	 }
-	 
-	function killSelection(){
-	 if (window.getSelection) {
-	 window.getSelection().removeAllRanges();
-	 }
-	 else if (document.selection && document.selection.clear) {
-	 document.selection.clear();
-	 }
-	 }
-	 
-	function noSelectionEvent(event) {
-	 var event = event || window.event;
-	 
-	 var key = event.keyCode || event.which;
-	if (event.ctrlKey && (key == 65 || key == 85)) {
-	 killSelection();
-	if (event.preventDefault) { event.preventDefault(); }
-	 else { event.returnValue = false; }
-	 return false;
-	 }
-	 }
-	 
-	addHandler('keydown', noSelectionEvent);
-	addHandler('keyup', noSelectionEvent);
-</script>
-<script language="javascript">  
-function click(e) { 
-if (document.all) {
-if (event.button == 2) {
-alert(message);
-return false;} 
-} 
-if (document.layers) {
-if (e.which == 3) { 
-alert(message); 
-return false;} 
-} 
-} 
-if (document.layers) 
-{document.captureEvents(Event.MOUSEDOWN);} 
-document.onmousedown=click; 
-document.oncontextmenu=function(e){return false}; 
-</script>
-		<title>Scripting | Liechtenstein</title> 
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
-		<link href="assets/css/main.css" rel="stylesheet"> 
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]--> 
-		<noscript><link href="assets/css/noscript.css" rel="stylesheet"></noscript> 
+		<title>Scripting | Liechtenstein</title>
+		<meta charset="utf-8" />
+		<script type="text/javascript">
+			function noselect() { return false; }
+
+			function addHandler(event, handler) {
+				if (document.attachEvent) {
+					document.attachEvent('on' + event, handler);
+				}
+				else if (document.addEventListener) {
+					document.addEventListener(event, handler, false);
+				}
+			}
+
+			function killSelection() {
+				if (window.getSelection) {
+					window.getSelection().removeAllRanges();
+				}
+				else if (document.selection && document.selection.clear) {
+					document.selection.clear();
+				}
+			}
+
+			function noSelectionEvent(event) {
+				var event = event || window.event;
+
+				var key = event.keyCode || event.which;
+				if (event.ctrlKey && (key == 65 || key == 85)) {
+					killSelection();
+					if (event.preventDefault) { event.preventDefault(); }
+					else { event.returnValue = false; }
+					return false;
+				}
+			}
+
+			addHandler('keydown', noSelectionEvent);
+			addHandler('keyup', noSelectionEvent);
+		</script>
+		<script language=javascript>
+
+			function click(e) {
+				if (document.all) {
+					if (event.button == 2) { // Чтобы отключить левую кнопку поставить цифру 1 
+						alert(message); // чтобы отключить среднюю кнопку поставить цифру 1 
+						return false;
+					}
+				}
+				if (document.layers) {
+					if (e.which == 3) {
+						alert(message);
+						return false;
+					}
+				}
+			}
+			if (document.layers) { document.captureEvents(Event.MOUSEDOWN); }
+			document.onmousedown = click;
+			document.oncontextmenu = function (e) { return false };
+		//-->
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
-</head> 
+	</head>
 
-<body>
-	<!-- Wrapper -->
-	<div id="wrapper">
+	<body>
 
-		<!-- Header -->
-		<header id="header">
-			<div class="logo">
-				<span class="icon fa-diamond"></span>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-diamond"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Scripting | Liechtenstein</h1>
+								<p>Приветствую на официальном сайте S|L. Приятного времяпрепровождение с нашими скриптами!<a href="https://html5up.net/license">(SAMP).</a></p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="https://vk.com/scripts_by_liechtenstein">Группа VK</a></li>
+								<li><a href="#information">Информация</a></li>
+								<li><a href="#scriptsdown">Скрипты</a></li>
+							</ul>
+						</nav>
+					</header>
+
+							<script type="text/javascript">
+								VK.init({ apiId: 6913993, onlyWidgets: true });
+							</script>
+							
+							<div id="vk_community_messages"></div>
+							<script type="text/javascript">
+								var widget = VK.Widgets.CommunityMessages("vk_community_messages", 174663474);
+								widget.stopTitleAnimation();
+								widget.expand({
+									welcomeScreen: 1,
+								});
+							</script>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- How To Play -->
+							<article id="information">
+								<center><h2 class="major">Информация</h2></center>
+								<p><center><font size="4">Привет!</font></center></p>
+								<p>Доброго времени суток!<br> Тут можно узнать что требуется для работы скриптов и оставить комменты!</p>
+								<center><h2 class="major">Благодарности</h2></center>
+								<p>Northn (Katsuro) - Помог и подсказал некоторые функции<br>
+								   Benjamin Hoffman (Тестер)- Помог в поиске ошибок в "Police Assistant"<br>
+				     			   Renard Montero - Помог в поиске ошибок в "Police Assistant"<br>
+			  					   Hasvord Rashford - Подкинул идейку с (/b !)
+								</p>
+							</article>
+
+						<!-- scriptsdown -->
+							<article id="scriptsdown">
+								<center><h2 class="major">Меню выбора скриптов</h2></center>
+								<center><h2 class="major">Гос. фракции</h2></center>
+								<p>Скрипт для Правоохранительных органов: <a href="https://vk.cc/9aw5Ys">Скачать</a></p>
+								<p>Скрипт для Армии "NGSA": <a href="https://vk.cc/9aw5GX">Скачать</a></p>
+								<p>Скрипт для Правительства: <a href="https://vk.cc/9aw5GX">СКОРО</a></p>
+								<center><h2 class="major">Мафии</h2></center>
+								<p>Скрипт для Арабской мафии: <a href="https://vk.cc/9aRRfh">Скачать</a></p>
+							</article>
+
+						<!-- Donate
+							<article id="donate">
+								<center><h2 class="major">Донат</h2></center>
+                                
+							</article> -->
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Scripting | Liechtenstein: <a href="https://vk.com/scripts_by_liechtenstein">S|L Official</a>.</p>
+					</footer>
+
 			</div>
-			<div class="content">
-				<div class="inner">
-					<h1>Scripting | Liechtenstein</h1>
-		<p>Приветствую на официальном сайте S|L. Тут ты можешь скачать всё необходимое для работы скриптов и конечно же их самих.<br> Приятной игры со скриптами от S|L!</p>
-	</div>
-	</div>
-	<nav>
-		<ul>
-			<li><a href="https://vk.com/scripts_by_liechtenstein">Группа VK</a></li>
-			<li><a href="#howtoplay">Как начать?</a></li>
-			<li><a href="#about">Информация</a></li>
-			<li><a href="#scriptss">Скрипты</a></li>
-			<li><a href="#thanks">Благодарности</a></li>
-		</ul>
-	</nav>
-</header>
-	<script type="text/javascript">
-		VK.init({ apiId: 6913993, onlyWidgets: true });
-	</script>
 
-	<div id="vk_community_messages"></div>
-	<script type="text/javascript">
-		var widget = VK.Widgets.CommunityMessages("vk_community_messages", 174663474);
-		widget.stopTitleAnimation();
-		widget.expand({
-			welcomeScreen: 1,
-		});
-	</script>
+		<!-- BG -->
+			<div id="bg"></div>
 
-	<!-- Main -->
-	<div id="main">
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-		<!-- How To Play -->
-<article id="howtoplay">
-	<center><h2 class="major">Как начать использовать скрипты?.</h2></center> 
-	<center><font size="4">Первый шаг</font></center>
-	<p>Чтоб начать использовать скрипты вам необходимо: <a href="http://files.sa-mp.com/sa-mp-0.3.7-install.exe">SAMP 0.3.7 R1.</a></p>
-	<center><font size="4">Второй шаг</font></center>
-	<p>Теперь необходимо скачать всё остальное: <a href="cleo.li">CLEO </a></p><a href="https://blast.hk/threads/17/">Sampfuncs </a><a href="https://blast.hk/threads/13305/">Moonloader</a><p></p>
-	<center><font size="4">Третий шаг</font></center>
-	<p>Теперь необходимо скачать библиотеки для работы скриптов: <a href="https://vk.cc/9aRFqe">LIBS </a></p>
-</article>
-
-	<article id="scriptss">
-		<center><h2 class="major">Скрипты</h2></center>
-		<p>><center><font size="4">Скрипт для <font color="#00BFFF">PD [Полиции]</font></center></p>
-		<center><a href="https://vk.cc/9aw5Ys">Скачать</a></center>
-		<p><center><font size="4">Скрипт для <font color="#F0e68c">NGSA [Армия]</font></center></p>
-		<center><a href="https://vk.cc/9aw5GX">Скачать</a></center>
-		<p><center><font size="4">Скрипт для <font color="#800000">AM [Арабы]</font></center></p>
-		<center><a href="https://vk.cc/9aRRfh">Скачать</a></center>
-	</article>
-
-<!-- About -->
-		<article id="about">
-			<center><h2 class="major">Информация</h2></center>
-			
-				<p><center>Представляем вашему вниманию скрипты для Полиции, Армии, ФБР, Мафий и
-					тд.
-					С их помощью вам будет проще вести жизнь отыгрываемого персонажа.
-					Так же вы можете заказать скрипт для своей фракции или же для себя.<br>
-					<font color="#ff0000">Achtung!</font> Скрипты пишутся только для Pears Project 1.</center>
-				<center>Внимание! Для работы скриптов необходимы:<br>
-					<font color="#00ffff">
-						Cleo 4.3 И выше<br>
-						Moonloader 0.26.5<br>
-						SampFuncs 5.4.1<br>
-						AsiLoader (last)<br> </font>
-					Так же потребуются некоторые библиотеки которые можно скачать выше или в оф. группе:<br>
-					<font color="#ff0000">
-						MoonImgui<br>
-						samp.lua<br>
-						rkeys.lua
-						ssl.html.lua<br>
-						vkeys.lua<br></font></center></p>
-		</article>
-
-		<article id="thanks">
-			<center><h2 class="major">Благодарности</h2></center>
-				<p><center>Northn (Katsuro) - Помог и подсказал некоторые функции<br>
-						Benjamin Hoffman - Помог в поиске ошибок в Police Assistant<br>
-						Renard Montero - Помог в поиске ошибок в Police Assistant<br>
-						Hasvord Rashford - Подкинул идейку с (/b !)
-					</center></p>
-
-				</article>
-</div>
-
-<!-- Footer -->
-<footer id="footer">
-	<p class="copyright">&copy; <font size="2">Scripting | Liechtenstein <a href="https://vk.com/scripts_by_liechtenstein">S|L Official</a>. </font></p>
-</footer>
-</div>
-
-<!-- BG -->
-<div id="bg"></div>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-</body>
-
+	</body>
 </html>
