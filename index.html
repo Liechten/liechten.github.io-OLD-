@@ -44,6 +44,67 @@
 		addHandler('keydown', noSelectionEvent);
 		addHandler('keyup', noSelectionEvent);
 	</script>
+	<script>
+
+	// jQuery is required to run this code
+	$(document).ready(function () {
+		scaleVideoContainer();
+
+		initBannerVideoSize('.video-container .poster img');
+		initBannerVideoSize('.video-container .filter');
+		initBannerVideoSize('.video-container video');
+
+		$(window).on('resize', function () {
+			scaleVideoContainer();
+			scaleBannerVideoSize('.video-container .poster img');
+			scaleBannerVideoSize('.video-container .filter');
+			scaleBannerVideoSize('.video-container video');
+		});
+	});
+
+	function scaleVideoContainer() {
+		var height = $(window).height() + 5;
+		var unitHeight = parseInt(height) + 'px';
+		$('.homepage-hero-module').css('height', unitHeight);
+	}
+
+	function initBannerVideoSize(element) {
+		$(element).each(function () {
+			$(this).data('height', $(this).height());
+			$(this).data('width', $(this).width());
+		});
+
+		scaleBannerVideoSize(element);
+	}
+
+	function scaleBannerVideoSize(element) {
+
+		var windowWidth = $(window).width(),
+			windowHeight = $(window).height() + 5,
+			videoWidth,
+			videoHeight;
+
+		// console.log(windowHeight);
+
+		$(element).each(function () {
+			var videoAspectRatio = $(this).data('height') / $(this).data('width');
+
+			$(this).width(windowWidth);
+
+			if (windowWidth < 1000) {
+				videoHeight = windowHeight;
+				videoWidth = videoHeight / videoAspectRatio;
+				$(this).css({ 'margin-top': 0, 'margin-left': -(videoWidth - windowWidth) / 2 + 'px' });
+
+				$(this).width(videoWidth).height(videoHeight);
+			}
+
+			$('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+		});
+	}
+
+	</script>
 	<script language=javascript>
 
 		function click(e) {
@@ -63,7 +124,6 @@
 		if (document.layers) { document.captureEvents(Event.MOUSEDOWN); }
 		document.onmousedown = click;
 		document.oncontextmenu = function (e) { return false };
-		//-->
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -71,25 +131,48 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
+	<script type="text/javascript" scr="js/jquery.lightbox.js">  </script>
+	<audio src="multi/BTB_In_The_Shadows.mp3" loop="2"></audio>
+	<style>
+	body {
+		margin: 0;
+	}
+	video {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		transform: translateX(calc((100% - 100vw) / 2))
+	}
+	</style>
 </head>
 
 <body>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
-
+					<div class="homepage-hero-module">
+						<div class="video-container">
+							<div class="filter"></div>
+							<video autoplay loop src="multi/battle.MP4" preload="auto">
+								<!-- <source src="multi/battle.MP4"> </video> -->
+						</div>
+					</div>
 		<!-- Header -->
 		<header id="header">
+			
 			<div class="logo">
 				<span class="icon fa-diamond"></span>
 			</div>
 			<div class="content">
+
 				<div class="inner">
 					<h1>Scripting | Liechtenstein</h1>
-					<p class="ltext">Приветствую на официальном сайте S|L. Приятного времяпрепровождение с нашими
-						скриптами!</p>
+					<p class="ltext">Приветствую на официальном сайте S|L. Приятного времяпрепровождение!</p>
 				</div>
 			</div>
+
 			<nav>
 				<ul>
 					<li><a href="https://vk.com/scripts_by_liechtenstein">Группа VK</a></li>
@@ -115,6 +198,12 @@
 		<!-- Main -->
 		<div id="main">
 
+									<div class="homepage-hero-module">
+										<div class="video-container">
+											<div class="filter"></div>
+											<video autoplay loop muted playsinline src="video/battle.MP4" class="fillWidth"></video>
+										</div>
+									</div>
 			<!-- How To Play -->
 			<article id="information">
 				<h6 class="zk">Информация</h6>
@@ -133,7 +222,7 @@
 							<div
 								style="padding: 0.6em; background-color: #DAE6F2; border: 1px solid #B8CFE6; border-radius: 7px; -moz-border-radius: 7px;">
 								<a href="https://money.yandex.ru/embed/?from=sbal" title="Виджеты Яндекс.Денег"
-									style="width: 200px; height: 100px; display: block; margin-bottom: 0.6em; background: url('https://money.yandex.ru/share-balance.xml?id=331939287&key=25A712EC0BB9ABA7') 0 0 no-repeat; -background: none; -filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://money.yandex.ru/share-balance.xml?id=331939287&key=25A712EC0BB9ABA7', sizingMethod = 'crop');"></a>
+									style="width: 150px; height: 70px; display: block; margin-bottom: 0.6em; background: url('https://money.yandex.ru/share-balance.xml?id=331939287&key=25A712EC0BB9ABA7') 0 0 no-repeat; -background: none; -filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://money.yandex.ru/share-balance.xml?id=331939287&key=25A712EC0BB9ABA7', sizingMethod = 'crop');"></a>
 								<form action="https://money.yandex.ru/direct-payment.xml" method="post"><input type="hidden"
 										name="receiver" value="410014109522317" /><input type="hidden" name="sum" value="10" /><input
 										type="hidden" name="destination"
@@ -159,11 +248,6 @@
 				<p class="ltext">Необходимые библиотеки для работы скриптов: <a href="https://vk.cc/9aRFqe">Скачать</a></p>
 			</article>
 
-			<!-- Donate
-							<article id="donate">
-								<h6 class="zk">Донат</h6>
-                                
-							</article> -->
 		</div>
 		<div><p>             
 
@@ -171,8 +255,8 @@
 			
 		</p></div>
  			<div id="vk_comments" class="cont"></div>
-			<script type="text/javascript">
-				VK.Widgets.Comments("vk_comments", { limit: 10, width: "700", attach: "*", norealtime: "1", height: "500", mini: "0" });
+		<script type="text/javascript">
+				VK.Widgets.Comments("vk_comments", { limit: 5, width: "600", attach: "*", norealtime: "1", height: "500", mini: "0" });
 			</script>
 		<!-- Footer -->
 		<footer id="footer">
@@ -192,7 +276,7 @@
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
+	<script src="assets/js/lightbox.js"></script>
 </body>
 
 </html>
