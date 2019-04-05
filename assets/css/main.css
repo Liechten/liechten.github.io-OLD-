@@ -282,7 +282,7 @@
 
 		/*Video настройки*/
 		
-	/* body {
+	 body {
 		margin: 0;
 	}
 	video {
@@ -292,7 +292,7 @@
 		min-width: 100%;
 		min-height: 100%;
 		transform: translateX(calc((100% - 100vw) / 2))
-	} */
+	}
 		/*END*/
 		p.ltext {
 			color: #ffffff;
@@ -1219,8 +1219,7 @@
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			/* background-image: url("../../images/bg.jpg"); */
-			background-image: url("../../multi/battle.mp4");
+			 background-image: url("../../images/bg.jpg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
