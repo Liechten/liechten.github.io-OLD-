@@ -8,7 +8,7 @@
 <head>
 	<title>Scripting | Liechtenstein</title>
 	<meta charset="utf-8" />
-	<script type="text/javascript">
+	<script>
 		function noselect() { return false; }
 
 		function addHandler(event, handler) {
@@ -127,32 +127,29 @@
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
-	<script type="text/javascript" src="js/jquery.lightbox.js"></script>
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<script src="https://vk.com/js/api/openapi.js?160"></script>
+	<script src="js/jquery.lightbox.js"></script>
 	<audio autoplay loop src="multi/BTB_In_The_Shadows.mp3"></audio>
 </head>
 
 <body>
+
 	<!-- Wrapper -->
 	<div id="wrapper">
-									<div class="homepage-hero-module">
-										<div class="video-container">
-											<div class="filter"></div>
-											<video muted autoplay loop src="multi/battle.mp4">
-											</video>
-										</div>
-									</div>
+
 		<!-- Header -->
 		<header id="header">
-			
+			<div class="homepage-hero-module">
+				<div class="video-container">
+					<div class="filter"></div>
+					<video autoplay loop muted playsinline src="multi/battle.mp4" class="fillWidth"></video>
+				</div>
+			</div>
 			<div class="logo">
 				<span class="icon fa-diamond"></span>
 			</div>
 			<div class="content">
-							
 				<div class="inner">
 					<h1>Scripting | Liechtenstein</h1>
 					<p class="ltext">Приветствую на официальном сайте S|L. Приятного времяпрепровождение!</p>
@@ -248,7 +245,7 @@
 			
 
 	<!-- BG -->
-	<div id="bg"></div>
+	<!-- <div id="bg"></div> -->
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
