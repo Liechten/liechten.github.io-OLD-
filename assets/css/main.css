@@ -107,7 +107,7 @@
   .video-container video.fillWidth {
     width: 100%;
   }
- 
+
 
 /*-------------------------- */
 	@-ms-viewport {
@@ -280,6 +280,20 @@
 			src: url(assets/fonts/Philosopher_Regular.ttf);
 		}
 
+		/*Video настройки*/
+		
+	/* body {
+		margin: 0;
+	}
+	video {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		transform: translateX(calc((100% - 100vw) / 2))
+	} */
+		/*END*/
 		p.ltext {
 			color: #ffffff;
 			font-weight: normal;
