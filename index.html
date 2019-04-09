@@ -46,91 +46,92 @@
 	</script>
 	<script>
 
-	// jQuery is required to run this code
-	$(document).ready(function () {
-		scaleVideoContainer();
-
-		initBannerVideoSize('.video-container .poster img');
-		initBannerVideoSize('.video-container .filter');
-		initBannerVideoSize('.video-container video');
-
-		$(window).on('resize', function () {
+		// jQuery is required to run this code
+		$(document).ready(function () {
 			scaleVideoContainer();
-			scaleBannerVideoSize('.video-container .poster img');
-			scaleBannerVideoSize('.video-container .filter');
-			scaleBannerVideoSize('.video-container video');
-		});
-	});
 
-	function scaleVideoContainer() {
-		var height = $(window).height() + 5;
-		var unitHeight = parseInt(height) + 'px';
-		$('.homepage-hero-module').css('height', unitHeight);
-	}
+			initBannerVideoSize('.video-container .poster img');
+			initBannerVideoSize('.video-container .filter');
+			initBannerVideoSize('.video-container video');
 
-	function initBannerVideoSize(element) {
-		$(element).each(function () {
-			$(this).data('height', $(this).height());
-			$(this).data('width', $(this).width());
+			$(window).on('resize', function () {
+				scaleVideoContainer();
+				scaleBannerVideoSize('.video-container .poster img');
+				scaleBannerVideoSize('.video-container .filter');
+				scaleBannerVideoSize('.video-container video');
+			});
 		});
 
-		scaleBannerVideoSize(element);
-	}
+		function scaleVideoContainer() {
+			var height = $(window).height() + 5;
+			var unitHeight = parseInt(height) + 'px';
+			$('.homepage-hero-module').css('height', unitHeight);
+		}
 
-	function scaleBannerVideoSize(element) {
+		function initBannerVideoSize(element) {
+			$(element).each(function () {
+				$(this).data('height', $(this).height());
+				$(this).data('width', $(this).width());
+			});
 
-		var windowWidth = $(window).width(),
-			windowHeight = $(window).height() + 5,
-			videoWidth,
-			videoHeight;
+			scaleBannerVideoSize(element);
+		}
 
-		// console.log(windowHeight);
+		function scaleBannerVideoSize(element) {
 
-		$(element).each(function () {
-			var videoAspectRatio = $(this).data('height') / $(this).data('width');
+			var windowWidth = $(window).width(),
+				windowHeight = $(window).height() + 5,
+				videoWidth,
+				videoHeight;
 
-			$(this).width(windowWidth);
+			// console.log(windowHeight);
 
-			if (windowWidth < 1000) {
-				videoHeight = windowHeight;
-				videoWidth = videoHeight / videoAspectRatio;
-				$(this).css({ 'margin-top': 0, 'margin-left': -(videoWidth - windowWidth) / 2 + 'px' });
+			$(element).each(function () {
+				var videoAspectRatio = $(this).data('height') / $(this).data('width');
 
-				$(this).width(videoWidth).height(videoHeight);
-			}
+				$(this).width(windowWidth);
 
-			$('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+				if (windowWidth < 1000) {
+					videoHeight = windowHeight;
+					videoWidth = videoHeight / videoAspectRatio;
+					$(this).css({ 'margin-top': 0, 'margin-left': -(videoWidth - windowWidth) / 2 + 'px' });
 
-		});
-	}
+					$(this).width(videoWidth).height(videoHeight);
+				}
+
+				$('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+			});
+		}
 
 	</script>
-		<script>
+	<script>
 
-			function click(e) {
-				if (document.all) {
-					if (event.button == 2) { // Чтобы отключить левую кнопку поставить цифру 1 
-						alert(message); // чтобы отключить среднюю кнопку поставить цифру 1 
-						return false;
-					}
-				}
-				if (document.layers) {
-					if (e.which == 3) {
-						alert(message);
-						return false;
-					}
+		function click(e) {
+			if (document.all) {
+				if (event.button == 2) { // Чтобы отключить левую кнопку поставить цифру 1 
+					alert(message); // чтобы отключить среднюю кнопку поставить цифру 1 
+					return false;
 				}
 			}
-			if (document.layers) { document.captureEvents(Event.MOUSEDOWN); }
-			document.onmousedown = click;
-			document.oncontextmenu = function (e) { return false };
+			if (document.layers) {
+				if (e.which == 3) {
+					alert(message);
+					return false;
+				}
+			}
+		}
+		if (document.layers) { document.captureEvents(Event.MOUSEDOWN); }
+		document.onmousedown = click;
+		document.oncontextmenu = function (e) { return false };
 		//-->
-		</script>
+	</script>
 	<script src="https://vk.com/js/api/openapi.js?160"></script>
 	<script src="js/jquery.lightbox.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<audio autoplay loop src="multi/music.mp3"></audio>
 </head>
 
@@ -138,7 +139,7 @@
 
 	<!-- Wrapper -->
 	<div id="wrapper">
-					<!-- <div class="homepage-hero-module">
+		<!-- <div class="homepage-hero-module">
 						<div class="video-container">
 							<div class="filter"></div>
 							<video autoplay loop muted playsinline src="multi/battle.mp4" class="fillWidth"></video>
@@ -184,7 +185,8 @@
 			<article id="information">
 				<h6 class="zk">Информация</h6>
 				<p class="ctext">Привет! Доброго времени суток!<br> Тут можно узнать что требуется для работы скриптов и
-					оставить комменты!<br> Для работы необходимы библиотеки: Samp.lua, Imgui, rkeys.lua, vkeys.lua, ssl.https.<br> Так же требуются: Cleo 4.3 (и выше), Moonloader 0.26(.5), Sampfuncs 5.4 final</p>
+					оставить комменты!<br> Для работы необходимы библиотеки: Samp.lua, Imgui, rkeys.lua, vkeys.lua,
+					ssl.https.<br> Так же требуются: Cleo 4.3 (и выше), Moonloader 0.26(.5), Sampfuncs 5.4 final</p>
 				<h6 class="zk">Благодарности</h6>
 				<p class="ltext">Northn (Katsuro) - Помог и подсказал некоторые функции<br>
 					Benjamin Hoffman (Тестер)- Помог в поиске ошибок в "Police Assistant"<br>
@@ -199,12 +201,13 @@
 								style="padding: 0.6em; background-color: #DAE6F2; border: 1px solid #B8CFE6; border-radius: 7px; -moz-border-radius: 7px;">
 								<a href="https://money.yandex.ru/embed/?from=sbal" title="Виджеты Яндекс.Денег"
 									style="width: 150px; height: 70px; display: block; margin-bottom: 0.6em; background: url('https://money.yandex.ru/share-balance.xml?id=331939287&key=25A712EC0BB9ABA7') 0 0 no-repeat; -background: none; -filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://money.yandex.ru/share-balance.xml?id=331939287&key=25A712EC0BB9ABA7', sizingMethod = 'crop');"></a>
-								<form action="https://money.yandex.ru/direct-payment.xml" method="post"><input type="hidden"
-										name="receiver" value="410014109522317" /><input type="hidden" name="sum" value="10" /><input
-										type="hidden" name="destination"
+								<form action="https://money.yandex.ru/direct-payment.xml" method="post"><input
+										type="hidden" name="receiver" value="410014109522317" /><input type="hidden"
+										name="sum" value="10" /><input type="hidden" name="destination"
 										value="Яндекс.Деньги &#8212; на хорошее дело не жалко!" /><input type="hidden"
-										name="FormComment" value="Пожертвование через виджет &#171Мой баланс&#187;" /><input
-										type="submit" value="Поддержать проект" style="margin-top: 0.6em; width: 100%;" /></form>
+										name="FormComment"
+										value="Пожертвование через виджет &#171Мой баланс&#187;" /><input type="submit"
+										value="Поддержать проект" style="margin-top: 0.6em; width: 100%;" /></form>
 							</div>
 						</td>
 					</tr>
@@ -215,25 +218,27 @@
 			<article id="scriptsdown">
 				<h6 class="zk">Меню выбора скриптов</h6>
 				<h6 class="zk">Гос. фракции</h6>
-				<p class="ltext">Скрипт для Правоохранительных органов: <a href="https://vk.cc/9aw5Ys">Скачать</a></p>
-				<p class="ltext">Скрипт для Армии "NGSA": <a href="https://vk.cc/9aw5GX">Скачать</a></p>
-				<p class="ltext">Скрипт для Правительства: <a href="https://vk.cc/9fLEj5">Скачать</a></p>
+				<p class="ltext">Скрипт для Правоохранительных органов: <a href="https://vk.cc/9aw5Ys" target="_blank">Скачать</a></p>
+				<p class="ltext">Скрипт для Армии "NGSA": <a href="https://vk.cc/9aw5GX" target="_blank">Скачать</a></p>
+				<p class="ltext">Скрипт для Правительства: <a href="https://vk.cc/9fLEj5" target="_blank">Скачать</a></p>
 				<h6 class="zk">Мафии</h6>
-				<p class="ltext">Скрипт для Арабской мафии: <a href="https://vk.cc/9aRRfh">Скачать</a></p>
+				<p class="ltext">Скрипт для Арабской мафии: <a href="https://vk.cc/9aRRfh" target="_blank">Скачать</a></p>
 				<h6 class="zk">Прочее</h6>
-				<p class="ltext">Сборка необходимых элементов для работы скрипта: <a href="https://vk.cc/9fPGuy">Скачать</a></p>
+				<p class="ltext">Сборка необходимых элементов для работы скрипта: <a href="https://vk.cc/9fPGuy" target="_blank">Скачать</a></p>
 			</article>
 
 		</div>
-		<div><p>             
+		<div>
+			<p>
 
 
-			
-		</p></div>
- 			<div id="vk_comments" class="cont"></div>
+
+			</p>
+		</div>
+		<div id="vk_comments" class="cont"></div>
 		<script type="text/javascript">
-				VK.Widgets.Comments("vk_comments", { limit: 5, width: "600", attach: "*", norealtime: "1", height: "500", mini: "0" });
-			</script>
+			VK.Widgets.Comments("vk_comments", { limit: 5, width: "600", attach: "*", norealtime: "1", height: "500", mini: "0" });
+		</script>
 		<!-- Footer -->
 		<footer id="footer">
 			<p class="copyright">&copy; Scripting | Liechtenstein: <a href="https://vk.com/scripts_by_liechtenstein">S|L
@@ -241,8 +246,8 @@
 		</footer>
 
 	</div>
-			
-			
+
+
 
 	<!-- BG -->
 	<div id="bg"></div>
