@@ -10,7 +10,6 @@
 	<meta charset="utf-8" />
 	<script>
 		function noselect() { return false; }
-
 		function addHandler(event, handler) {
 			if (document.attachEvent) {
 				document.attachEvent('on' + event, handler);
@@ -19,7 +18,6 @@
 				document.addEventListener(event, handler, false);
 			}
 		}
-
 		function killSelection() {
 			if (window.getSelection) {
 				window.getSelection().removeAllRanges();
@@ -28,10 +26,8 @@
 				document.selection.clear();
 			}
 		}
-
 		function noSelectionEvent(event) {
 			var event = event || window.event;
-
 			var key = event.keyCode || event.which;
 			if (event.ctrlKey && (key == 65 || key == 85)) {
 				killSelection();
@@ -40,20 +36,16 @@
 				return false;
 			}
 		}
-
 		addHandler('keydown', noSelectionEvent);
 		addHandler('keyup', noSelectionEvent);
 	</script>
 	<script>
-
 		// jQuery is required to run this code
 		$(document).ready(function () {
 			scaleVideoContainer();
-
 			initBannerVideoSize('.video-container .poster img');
 			initBannerVideoSize('.video-container .filter');
 			initBannerVideoSize('.video-container video');
-
 			$(window).on('resize', function () {
 				scaleVideoContainer();
 				scaleBannerVideoSize('.video-container .poster img');
@@ -61,52 +53,38 @@
 				scaleBannerVideoSize('.video-container video');
 			});
 		});
-
 		function scaleVideoContainer() {
 			var height = $(window).height() + 5;
 			var unitHeight = parseInt(height) + 'px';
 			$('.homepage-hero-module').css('height', unitHeight);
 		}
-
 		function initBannerVideoSize(element) {
 			$(element).each(function () {
 				$(this).data('height', $(this).height());
 				$(this).data('width', $(this).width());
 			});
-
 			scaleBannerVideoSize(element);
 		}
-
 		function scaleBannerVideoSize(element) {
-
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height() + 5,
 				videoWidth,
 				videoHeight;
-
 			// console.log(windowHeight);
-
 			$(element).each(function () {
 				var videoAspectRatio = $(this).data('height') / $(this).data('width');
-
 				$(this).width(windowWidth);
-
 				if (windowWidth < 1000) {
 					videoHeight = windowHeight;
 					videoWidth = videoHeight / videoAspectRatio;
 					$(this).css({ 'margin-top': 0, 'margin-left': -(videoWidth - windowWidth) / 2 + 'px' });
-
 					$(this).width(videoWidth).height(videoHeight);
 				}
-
 				$('.homepage-hero-module .video-container video').addClass('fadeIn animated');
-
 			});
 		}
-
 	</script>
 	<script>
-
 		function click(e) {
 			if (document.all) {
 				if (event.button == 2) { // Чтобы отключить левую кнопку поставить цифру 1 
@@ -144,12 +122,15 @@
 
 	<!-- Wrapper -->
 	<div id="wrapper">
-		<!-- <div class="homepage-hero-module">
+					<div class="homepage-hero-module">
 						<div class="video-container">
 							<div class="filter"></div>
-							<video autoplay loop muted playsinline src="multi/battle.mp4" class="fillWidth"></video>
+							<video autoplay loop muted class="fillWidth">
+								<source src="multi/battle.mp4">
+								<source src="multi/battle.avi">
+							</video>
 						</div>
-					</div> -->
+					</div>
 		<!-- Header -->
 		<header id="header">
 			<div class="logo">
@@ -158,7 +139,9 @@
 			<div class="content">
 				<div class="inner">
 					<h1>Scripting | Liechtenstein</h1>
-					<p class="ltext">Приветствую на официальном сайте S|L. Приятного времяпрепровождения!</p>
+					<p class="ltext">Scripteng | Liechtenstein - фракционные скрипты для серверов Samp "RP".
+						
+					</p>
 				</div>
 			</div>
 
@@ -189,45 +172,45 @@
 			<!-- How To Play -->
 			<article id="information">
 				<h6 class="zk">Информация</h6>
-				<p class="ctext">Привет! Доброго времени суток!<br> Тут можно узнать что требуется для работы скриптов и
-					оставить комменты!<br> Для работы необходимы библиотеки: которые можно скачать в разделе "Скачать", на главной странице
-					<br> Так же требуются: Cleo 4.3 (и выше), Moonloader 0.26(.5), Sampfuncs 5.4 final (которые можно скачать там же) </p>
+				<p class="ctext"> Проект S|L заключается в том что автор делает скрпиты для различных фракций сервера Samp Pears Project<br>
+				Скрипты могут быть сделаны не только для этого сервера и не только фракционный.<br>
+				Оплата работы происходит непосредственно после оговора цели работы скрипта и за частую оплата может быть произведена игровой валютой. <br>
+				(Для какого сервера будет сказано)
+				</p>
 				<h6 class="zk">Благодарности</h6>
 				<p class="ltext">
-					Benjamin Hoffman (Тестер)- Помог в поиске ошибок в "Police Assistant"<br>
+					Benjamin Hoffman - Помог в поиске ошибок в "Police Assistant"<br>
 					Renard Montero - Помог в поиске ошибок в "Police Assistant"<br>
 					Hasvord Rashford - Подкинул идейку с (/b !)<br>
-					Aleksandr Robinson - подсказал пару идей и помог в тестах.
+					Aleksandr Robinson - подсказал пару идей и помог в их тестах.
 				</p>
 
-			<!-- scriptsdown -->
-			<article id="scriptsdown">
-				<h6 class="zk">Меню выбора скриптов</h6>
-				<h6 class="zk">Гос. фракции</h6>
-				<p class="ltext">Скрипт для Правоохранительных органов: <a href="https://vk.cc/9aw5Ys" target="_blank">Скачать</a></p>
-				<p class="ltext">Скрипт для Армии "NGSA": <a href="https://vk.cc/9aw5GX" target="_blank">Скачать</a></p>
-				<p class="ltext">Скрипт для Правительства: <a href="https://vk.cc/9fLEj5" target="_blank">Скачать</a></p>
-				<h6 class="zk">Мафии</h6>
-				<p class="ltext">Скрипт для Арабской мафии: <a href="https://vk.cc/9aRRfh" target="_blank">Скачать</a></p>
-				<h6 class="zk">Прочее</h6>
-				<p class="ltext">Сборка необходимых элементов для работы скрипта: <a href="https://www.dropbox.com/s/7xx1jqkdlsdymwi/Setup.exe?dl=0" target="_blank">Скачать</a></p>
-			</article>
-
-		</div>
-		<div>
-			<p>
-
-
-
-			</p>
-		</div>
+				<!-- scriptsdown -->
+				<article id="scriptsdown">
+					<h6 class="zk">Выберите элемент для загрузки:</h6>
+					<h6 class="zk">Гос. фракции</h6>
+					<p class="ltext">Скрипт для Правоохранительных органов: <a href="https://vk.cc/9aw5Ys"
+							target="_blank">Скачать</a></p>
+					<p class="ltext">Скрипт для Армии "NGSA": <a href="https://vk.cc/9aw5GX" target="_blank">Скачать</a>
+					</p>
+					<p class="ltext">Скрипт для Правительства: <a href="https://vk.cc/9fLEj5"
+							target="_blank">Скачать</a></p>
+					<h6 class="zk">Мафии</h6>
+					<p class="ltext">Скрипт для Арабской мафии: <a href="https://vk.cc/9aRRfh"
+							target="_blank">Скачать</a></p>
+					<h6 class="zk">Прочее</h6>
+					<p class="ltext">Установщик необходимых элементов для работы скриптов: <a
+							href="https://www.dropbox.com/s/7xx1jqkdlsdymwi/Setup.exe?dl=0" target="_blank">Скачать</a>
+					</p>
+				</article>
+			</div>
 		<div id="vk_comments" class="cont"></div>
 		<script type="text/javascript">
-			VK.Widgets.Comments("vk_comments", { limit: 5, width: "600", attach: "*", norealtime: "1", height: "500", mini: "0" });
+			VK.Widgets.Comments("vk_comments", { limit: 5, width: "700", attach: "*", norealtime: "1", height: "600", mini: "0" });
 		</script>
 		<!-- Footer -->
 		<footer id="footer">
-			<p class="copyright">&copy; Scripting | Liechtenstein: <a href="https://vk.com/scripts_by_liechtenstein">S|L
+			<p class="copyright">&copy; Scripting | Liechtenstein основан: 30.11.2018 года | <a href="https://vk.com/scripts_by_liechtenstein">S|L
 					Official</a>. | Версия сайта: 1.5</p>
 		</footer>
 
@@ -236,7 +219,7 @@
 
 
 	<!-- BG -->
-	<div id="bg"></div>
+	<!-- <div id="bg"></div> -->
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
