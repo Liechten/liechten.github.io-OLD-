@@ -132,8 +132,12 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<audio autoplay loop src="multi/music.mp3">
-Звук не поддерживается вашим браузером</audio>
+	<audio autoplay loop>
+		<source src="multi/music.mp3">
+		<source src="multi/music.ogg">
+		<source src="multi/music.wav">
+		К сожалению фоновое сопровождение не поддерживается вашим браузером.
+	</audio>
 </head>
 
 <body>
