@@ -24,6 +24,31 @@
     <!--[if lt IE 9]>
        <script type="text/javascript" src="js/html5shiv.min.js"></script>
     <![endif]-->
+      <audio autoplay loop preload>
+        <source src="multi/music2.mp3">
+        <source src="multi/music2.ogg">
+        <source src="multi/music2.wav">
+      </audio>
+        <script>
+          function click(e) {
+            if (document.all) {
+              if (event.button == 2) { // Чтобы отключить левую кнопку поставить цифру 1 
+                alert(message); // чтобы отключить среднюю кнопку поставить цифру 1 
+                return false;
+              }
+            }
+            if (document.layers) {
+              if (e.which == 3) {
+                alert(message);
+                return false;
+              }
+            }
+          }
+          if (document.layers) { document.captureEvents(Event.MOUSEDOWN); }
+          document.onmousedown = click;
+          document.oncontextmenu = function (e) { return false };
+        		//-->
+        </script>
   </head>
   <body>
     <!--PRELOADER-->
@@ -39,7 +64,7 @@
       <div class="for-sticky">
         <!--LOGO-->
         <div class="col-md-2 col-xs-6 logo">
-          <a href="index.html"><img alt="logo" class="logo-nav" src="images/logo.png"></a>
+          <a href="http://liechtenstein.ml"><img alt="logo" class="logo-nav" src="images/logo.png">Home</a>
         </div>
         <!--/.LOGO END-->
       </div>
@@ -147,7 +172,7 @@
                           <tr>
                             <td class="title">Email </td>
                             <td class="break">:</td>
-                            <td> abstergo.ing@gmail.com</td>
+                            <td> liechtenstein.s.l.official@gmail.com</td>
                           </tr>
                           <tr>
                             <td class="title">VK</td>
@@ -279,7 +304,7 @@
                           Маркетинг
                         </p>
                         <p class="text-grey">
-                          Я могу составить хороший план по продвижению вашего продукта.
+                          Я могу составить хороший план по продвижению вашего продукта, сервера, сайта.
                         </p>
                       </div>
                     </li>
@@ -493,7 +518,7 @@
                   <span>Навыки</span>
                 </h3>
                 <p class="content-detail">
-                  На данный момент цифры таковы, но я с большим усердием изучаю эти языки
+                  На данный момент цифры таковы, но я с большим усердием изучаю это
                 </p>
               </div>
               <div class="col-md-9 content-right">
@@ -771,6 +796,8 @@
           <div class="footer-bottom">
             <div class="container">
               <div class="row">
+                      <p class="copyright">&copy; Личный сайт "Scripting Liechtenstein" был создан: 12.05.2019 года. |
+                        <a href="https://vk.com/scripts_by_liechtenstein">S|L</a> |  </p>
                 <img src="images/logo-big.png" alt="logo bottom" class="center-block" />
               </div>
             </div>
