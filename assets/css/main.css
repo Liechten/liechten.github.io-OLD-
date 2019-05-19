@@ -247,8 +247,8 @@
 			text-align: center;
 			margin: 0 0 2rem 0;
 			font-size: 25px;
-			font-family: Blogger_Sans-Bold_Italic;
-			src: url(fonts/Blogger_Sans-Bold_Italic.ttf);
+			font-family: 11720;
+			src: url(fonts/11720.ttf);
 			text-decoration: underline;
 		}
 
@@ -262,9 +262,9 @@
 			text-align: center;
 			margin: 0 0 2rem 0;
 			font-size: 25px;
-			font-family: Blogger_Sans-Bold_Italic;
-			src: url(assets/fonts/Blogger_Sans-Bold_Italic.ttf);
-			text-decoration: underline;
+			font-family: 11720;
+			src: url(assets/fonts/11720.ttf);
+			text-decoration: underline; 
 		}
 
 		p.ctext {
