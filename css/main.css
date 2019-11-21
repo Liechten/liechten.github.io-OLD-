@@ -20,7 +20,10 @@
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
-
+    .center-img {
+        display: block;
+        margin: 0 auto;
+    }
 	body {
 		line-height: 1;
 	}
